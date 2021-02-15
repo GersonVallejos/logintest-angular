@@ -1,0 +1,8 @@
+
+<div class="topnav" *ngIf="!token">
+    <button (click)="logIn()" >Login</button>
+    <button (click)="register()">Register</button>
+</div>
+<div class="topnav" *ngIf="token">
+    <button (click)="logOut()">Logout</button>
+</div>
