@@ -33,7 +33,7 @@ export class UserService{
         this.cookies.delete("token");
     }
     isLogged(): boolean{
-        return (this.getToken() != "") ? true : false;
+        return (this.getToken()) ? true : false;
     }
 
     setToken(token: string){

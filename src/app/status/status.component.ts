@@ -8,14 +8,9 @@ import { UserService } from '../user/user.service';
     styleUrls: ['./status.component.css']
 })
 
-export class StatusComponent implements OnInit{
-    ngOnInit(): void {
-        this.isLogged();
-    }
+export class StatusComponent{
 
-    token: boolean | undefined;
-
-    constructor(private userService: UserService,public router: Router){ }
+    constructor(public userService: UserService,public router: Router){ }
 
     logIn(){
         this.router.navigateByUrl('/login');
@@ -27,11 +22,6 @@ export class StatusComponent implements OnInit{
 
     logOut(){
         this.userService.logout();
-        this.token = !this.token;
         this.router.navigateByUrl('/');
-    }
-
-    isLogged(){
-        this.token = this.userService.isLogged();
     }
 }
